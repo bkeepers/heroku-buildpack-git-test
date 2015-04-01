@@ -1,0 +1,16 @@
+#!/bin/sh
+# Usage: bin/detect BUILD_DIR
+
+BUILD_DIR=$1
+
+set -e
+set -x
+
+echo "BUILD_DIR: $BUILD_DIR"
+
+if [ -d $BUILD_DIR/.git ]; then
+  echo "git-test"
+  exit 0
+else
+  exit 1
+fi
